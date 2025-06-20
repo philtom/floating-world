@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>IIIF Image API</title>
+    <link rel="stylesheet" href="node_modules/ol/ol.css">
+    <style>
+      .map {
+        width: 100%;
+        height: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+    <div class="controls">
+      <div id="iiif-notification">&nbsp;</div>
+      <label for="imageInfoUrl">Enter <code>info.json</code> URL:</label>
+      <input type="text" id="imageInfoUrl" value="http://localhost:8182/iiif/3/a.tiff/info.json">
+      <button id="display">Display image</button>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
