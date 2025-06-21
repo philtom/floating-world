@@ -47,8 +47,12 @@ const getMapMeta = async (infoUrl: string): Promise<MapMeta> => {
 // const iiifTileSource = new IIIF(options);
 // const layer = new TileLayer();
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const image = urlParams.get("image") || "/Kunisasda-Nakamura_Utaemon_IV-Hyuga_Koto.lzw.tif.tiled.pyramidal.tif";
+const safeImage = encodeURIComponent(image);
 getMapMeta(
-    "http://art.philtom.com:8080/iiif/3/Kunisasda-Nakamura_Utaemon_IV-Hyuga_Koto.lzw.tif.tiled.pyramidal.tif/info.json"
+    `https://art.philtom.com/iiif/3/${safeImage}/info.json`
 ).then(mapMeta => {
   const map = new Map({
     target: "map",
