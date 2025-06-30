@@ -52,7 +52,7 @@ const urlParams = new URLSearchParams(queryString);
 const image = urlParams.get("image") || "/Kunisasda-Nakamura_Utaemon_IV-Hyuga_Koto.lzw.tif.tiled.pyramidal.tif";
 const safeImage = encodeURIComponent(image);
 getMapMeta(
-    `https://art.philtom.com/iiif/3/${safeImage}/info.json`
+    `/iiif/3/${safeImage}/info.json`
 ).then(mapMeta => {
   const map = new Map({
     target: "map",
